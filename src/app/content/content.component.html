@@ -1,0 +1,89 @@
+<div class=" relative bg-blue-100 p-12">
+  <div class="relative">
+    <h1 class="text-2xl font-bold mb-2"> Search</h1>
+    <span class="absolute inset-y-0 left-0 pl-3 top-12 pointer-events-none"> 
+     <fa-icon [icon]="faSearch" ></fa-icon>   
+    </span>
+   <input type="text" placeholder="       Search" class="w-full p-2  mb-4 border-gray-200 rounded-lg outline-none">
+      
+  </div>
+  <div class="flex flex-row mt-2 mb-4">
+    <span class="mr-2">  <h1> Applied Filters: </h1></span>
+    <span class="flex flex-row">  <p class="text-gray-400 border-gray-800 mr-4"> e-Voucher  <fa-icon [icon]="faXmark" ></fa-icon>  </p> 
+      <p class="text-gray-400"> Clear Filters <fa-icon [icon]="faXmark" ></fa-icon> </p>
+    </span>
+   
+  </div>
+<div class="w-full flex">
+ 
+  <div class="border-white bg-white p-4 rounded-lg h-full mr-4">
+    <h1 class="mb-4 text-xl font-bold"> Categories </h1>
+     
+        <!-- <ul class="items-center gap-2 mb-6">
+        @for(category of categories; track category.id) {
+          <li class="flex flex-row items-center shadow-md border-gray-200 p-2 mb-2 justify-between">
+            <span class="flex flex-start"><span class="mx-2"> <fa-icon [icon]="faChevronDown" ></fa-icon></span>
+             <p class=" " >{{ category.name }} </p></span>
+              <span class="mx-2 justify-end align-end"> <fa-icon [icon]="faCheckCircle" ></fa-icon></span> </li> }
+        </ul> -->
+        <ul class="items-center gap-2 mb-6">
+         @for(category of categories;track category.id){ <li 
+              class="flex flex-row items-center shadow-md border-gray-200 p-2 mb-2 justify-between">
+            <span class="flex flex-start">
+              <span class="mx-2">
+                <fa-icon [icon]="faChevronDown"></fa-icon>
+              </span>
+              <p>{{ category.name }}</p>
+            </span>
+            <span class="mx-2 justify-end">
+            @if(category.color === "Active"){  <fa-icon  [icon]="faCheckCircle" class="text-red-500"></fa-icon>}
+            @if(category.color !== "Active"){  <fa-icon  [icon]="faCheckCircle" class="text-gray-200"></fa-icon>}
+         
+            </span>
+          </li> 
+        }
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2">
+      <div class="flex flex-row justify-between align-super">
+        <span> @if(items.length) { <h2 class="font-semibold text-xl text-blue-800 mr-2">{{ items.length }} results found </h2>}
+        </span>
+        <span><button (click)="toggleSort()" class="mb-2 px-6 py-1 bg-red-800 text-white rounded-lg">Sort</button> </span>
+      </div>
+      
+      <div class="grid grid-cols-3 gap-4 border-b border-blue-300 mb-4">
+        @for(item of items;track item.id){
+            <div class="p-2">
+          <div class="bg-gray-100 rounded-lg shadow-md flex flex-col items-center ">
+            <img [src]="item.image" [alt]="item.name" class="w-full h-48 object-cover rounded-t-lg">
+            <div class="p-4 text-center font-semibold">{{ item.name }}</div>
+            
+            <p class="p-4 text-center"> {{item.points}} points </p>
+            <p class="w-full border border-t border-gray-300 text-gray-600 mb-2">
+            <p class="p-4 text-center"> {{item.valid}} </p>
+          </div>
+    </div>}
+    </div>
+    <div class="flex  gap-2 justify-end">
+      <select id="cars" name="cars" class="outline-none px-2 py-1 rounded-md">
+        @for(num of numbers; track num) {<option [value]="num">{{ num }}</option> }
+      </select>
+      <label for="cars"> per page</label>
+    </div>
+    <!-- Sidebar -->
+    @if(showSort){
+        <div  class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-4 rounded-lg">
+      <div class="flex flex-row justify-between border-b border-gray-300">
+        <h3 class="text-lg font-bold mb-4">Filter By </h3>
+        <h3 (click)="resetAll()" class="text-lg font-bold mb-4 text-orange-400">Reset All </h3>
+        
+      </div>
+       <div class="flex flex-row gap-2 mt-4">
+        <button (click)="sortItems('asc')" class="mr-2 p-2 bg-red-500 rounded-md">A to Z</button>
+        <button (click)="sortItems('desc')" class="p-2 bg-gray-100 rounded-md"> Z to A</button>
+      </div>
+      <button (click)="applySort()" class="absolute bottom-4 left-4 right-4 p-2 bg-blue-500 text-white rounded">Apply</button>
+    </div>
+}
+  </div>
+  
