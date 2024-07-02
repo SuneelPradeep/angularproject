@@ -51,7 +51,7 @@
         <span><button (click)="toggleSort()" class="mb-2 px-6 py-1 bg-red-800 text-white rounded-lg">Sort</button> </span>
       </div>
       
-      <div class="grid grid-cols-3 gap-4 border-b border-blue-300 mb-4">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 border-b border-blue-300 mb-4">
         @for(item of items;track item.id){
             <div class="p-2">
           <div class="bg-gray-100 rounded-lg shadow-md flex flex-col items-center ">
