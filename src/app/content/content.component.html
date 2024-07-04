@@ -9,9 +9,17 @@
   </div>
   <div class="flex flex-row mt-2 mb-4">
     <span class="mr-2">  <h1> Applied Filters: </h1></span>
-    <span class="flex flex-row">  <p class="text-gray-400 border-gray-800 mr-4"> e-Voucher  <fa-icon [icon]="faXmark" ></fa-icon>  </p> 
+    <span class="flex flex-row"> 
+      @for(item of selectedCategories; track item){
+        <p class="text-gray-400 border-gray-800 mr-4"> {{item}}
+           <fa-icon [icon]="faXmark" (click)="removeFilter(item)" ></fa-icon> </p>  
+      }
+      <p class="text-gray-400" (click)="clearAllFilters()"> Clear Filters <fa-icon [icon]="faXmark" ></fa-icon> </p>
+   
+      </span>
+       <!-- <p class="text-gray-400 border-gray-800 mr-4"> e-Voucher  <fa-icon [icon]="faXmark" ></fa-icon>  </p> 
       <p class="text-gray-400"> Clear Filters <fa-icon [icon]="faXmark" ></fa-icon> </p>
-    </span>
+    </span> -->
    
   </div>
 <div class="w-full flex">
@@ -27,7 +35,7 @@
               <span class="mx-2 justify-end align-end"> <fa-icon [icon]="faCheckCircle" ></fa-icon></span> </li> }
         </ul> -->
         <ul class="items-center gap-2 mb-6">
-         @for(category of categories;track category.id){ <li 
+         @for(category of categories;track category.id){ <li  (click)="toggleCategorySelection(category.id)"
               class="flex flex-row items-center shadow-md border-gray-200 p-2 mb-2 justify-between">
             <span class="flex flex-start">
               <span class="mx-2">

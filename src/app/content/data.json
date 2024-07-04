@@ -1,11 +1,11 @@
 [
- { "id"  :0,"name" : "flower1", "image" : "flower1.jpg", "points" : 2, "valid" : "31-10-2024"},
- { "id"  :1,"name" : "flower2", "image" : "flowers7.jpg", "points" : 2, "valid" : "-"},
- { "id"  :2,"name" : "flower3", "image" : "flower3.jpg", "points" : 2, "valid" : "13-10-2024"},
- { "id"  :3,"name" : "flower4", "image" : "flower4.jpg", "points" : 2, "valid" : "27-10-2024"},
- { "id"  :4,"name" : "flower5", "image" : "flowers5.jpg", "points" : 2, "valid" : "1-1-2025"},
- { "id"  :5,"name" : "flower6", "image" : "flowers6.jpg", "points" : 2, "valid" : "4-12-2024"},
- { "id"  :6,"name" : "flower7", "image" : "flowers7.jpg", "points" : 2, "valid" : "1-10-2024"},
- { "id"  :7,"name" : "flower8", "image" : "flowers8.jpg", "points" : 2, "valid" : "3-10-2024"},
- { "id"  :8,"name" : "flower9", "image" : "flowers9.jpg", "points" : 2, "valid" : "11-10-2024"}
+ { "id"  :1,"name" : "flower1", "image" : "flower1.jpg", "points" : 2,"category":"e-Voucher", "valid" : "31-10-2024"},
+ { "id"  :2,"name" : "flower2", "image" : "flowers7.jpg", "points" : 5,"category":"Products", "valid" : "-"},
+ { "id"  :3,"name" : "flower3", "image" : "flower3.jpg", "points" : 7,"category":"Evergreen", "valid" : "13-10-2024"},
+ { "id"  :4,"name" : "flower4", "image" : "flower4.jpg", "points" : 1,"category":"Fashion& Retail", "valid" : "27-10-2024"},
+ { "id"  :5,"name" : "flower5", "image" : "flowers5.jpg", "points" : 4,"category":"Products", "valid" : "1-1-2025"},
+ { "id"  :6,"name" : "flower6", "image" : "flowers6.jpg", "points" : 9,"category":"Products", "valid" : "4-12-2024"},
+ { "id"  :7,"name" : "flower7", "image" : "flowers7.jpg", "points" : 8,"category":"e-Voucher", "valid" : "1-10-2024"},
+ { "id"  :8,"name" : "flower8", "image" : "flowers8.jpg", "points" : 6,"category":"Evergreen", "valid" : "3-10-2024"},
+ { "id"  :9,"name" : "flower9", "image" : "flowers9.jpg", "points" : 3,"category":"Evergreen", "valid" : "11-10-2024"}
 ]
